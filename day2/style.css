@@ -1,0 +1,49 @@
+td{ /* 선택자 : td 태그, 모든 td 태그에 적용*/
+    border : 1px solid gray;
+    text-align: center;
+}
+table{
+    width : 70%;
+    /* 태그 요소의 외부 여백 margin*/
+    margin-right: 5px;
+    margin-left: 30px;
+    border-spacing : 5px;   /* 테이블 칸(셀) 사이의 간격 설정하기 */
+    border-collapse: collapse;  /* 테이블 칸(셀) 사이의 간격 없애기 */
+    /* 위 두개중에 하나 설정해서 사용. */
+}
+th{
+    color : white;
+    background-color: brown;
+}
+td,th{
+    /* 태그 요소의 내부 여백 padding(좌,우,상,하 설정 가능) */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+caption{ /* 글꼴 크기는 166px 기본, 비율 : % em */
+    font-size: 1.2em;
+}
+
+/* 선택자 class 사용합니다. class 표시 기호는 . */
+.name { /* 모든 class="name" 모두를 선택 */
+    /* color:powderblue; */
+}
+td.name{ /* td 태그 class="name" 모두를 선택합니다.*/
+    color:powderblue;
+}
+/* 참고 : 이 외에도 여러가지 형식으로 선택자를 사용 */
+div > p { /* div 태그의 자식 태그 p 선택 */
+    color:blue;
+}
+p{
+    color:red;
+}
+/* 선택자 : tr:nth-child(even) tr 태그의 짝수 요소 선택 */
+
+
+/* 추가 설명
+color : red, green, blue 3가지 색상을 0~255 사이의 값으로 각각 혼합하여 만듭니다
+        ex)rgb(34,56,78), white : 모두 255, black : 모두 0
+    :자주 사용하는 색은 이름이 있습니다.
+    :#oooooo -> oo 하나가 16진수값 (0~255)
+*/
