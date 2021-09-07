@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day2-test Flexbox</title>
+    <style>
+        .flex-container {
+          display: flex;
+          background-color: DodgerBlue;
+        }
+        /* day2 style.css */
+        .flex-container > div {
+          background-color: #f1f1f1;
+          margin: 10px;
+          padding: 20px;
+          font-size: 30px;
+        }
+        .flex-container_column {
+            display: flex;
+            flex-direction: column;
+            background-color: dodgerblue;
+        }
+        .flex-container_column > div {
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>배열로 배열</h2>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+    </div>
+    <dl>
+        <dt>넘어가면 보이는지 체크</dt>
+        <dd> 창이 작을때는 DodgerBlue색이 안보이고 박스는 넘어감 </dd>
+        <dd> 창을 최대화면으로 키우면 보임 아마 최대화면 이상으로 넘어가면 작을때랑 같은현상 나올것같음</dd>
+    </dl>
+    <h2>컬럼으로 배열</h2>
+    <div class="flex-container_column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>  
+      </div>
+</body>
+</html>
