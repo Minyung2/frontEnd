@@ -1,0 +1,24 @@
+table{
+    
+    margin-right: 5px;
+    margin-left: 30px;
+    border-spacing : 5px;  
+    border-collapse: collapse;
+}
+th{ 
+    border:1px solid black;
+    color: white;
+    background-color: aquamarine;
+}
+
+td{
+    text-align: center;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+caption{ 
+    color: darkgreen;
+    font-size: 1em;
+}
