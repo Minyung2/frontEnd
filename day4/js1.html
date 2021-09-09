@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 예제#1</title>
+    <script> /* document 객체를 대상으로 출력을 실행 */
+        document.write('<h1>Javascript</h1>')
+        document.write('자바스크립트에 대해서 알아봅시다.')
+    </script>
+</head>
+<body>
+    <hr>
+    <h2>welcome!! 환영합니다.</h2>
+    <script>
+        document.write('My name is 홍길동')
+        // alert('나이를 알려주세요.'); /* 자바 스크립트의 대화상자(다이얼로그) 함수 */
+    </script>
+    <button onclick="alert('지역을 알려주세요')">추가 정보</button>
+    <button onclick="yourinfo()">추가 정보2</button> <!-- 사용자 정의 함수 -->
+    <button onclick="yourinfo2()">추가 정보3</button> <!-- 사용자 정의 함수 -->
+    <script>
+        function yourinfo() { /* 사용자 정의 함수 선언 */
+            // alert('당신의 반려 동물을 알려주세요')
+            var myAnimal;
+            myAnimal = prompt('반려동물 이름은?');  /* 기존 문서 내용이 clear 되고 새로 출력됨 */
+            // document.write(myAnimal);
+            document.getElementById('animal').innerHTML=myAnimal
+        }
+        function yourinfo2() {
+            var myAge;
+            myAge = prompt('당신의 나이는?');
+            document.getElementById('age').innerHTML=myAge
+        }
+    </script>
+    <p>반려동물 이름은 <span id="animal">?</span> 입니다.</p>
+    <p>당신의 나이는 <span id="age">?</span> 세 입니다.</p>
+    
+</body>
+</html>

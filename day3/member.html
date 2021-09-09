@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day3-4 member 회원등록</title>
+    <link rel="stylesheet" href="member.css">
+</head>
+<body>
+    <div style="width: 70%; margin:auto;"></div>
+    <h3>회원 등록</h3>
+    <form method="POST">
+    <table style="width: 70%; margin: auto;">
+        <tr>
+            <th>이름</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <th>패스워드</th>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <th>나이</th>
+            <td><input type="number" name="age"></td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td>
+                <select name="address">
+                    <!-- option 태그 안에 문자열은 화면에 보이는것, value 안의 문자열은 서버로 전송되는 값 -->
+                    <option value="서울">서울</option>
+                    <option value="인천">인천</option>
+                    <option value="대구">대구</option>
+                    <option value="광주">광주</option>
+                    <option value="부산">부산</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>
+                <input type="radio" value="male" name="gender" id="male">
+                <label name for="male">남자</label>
+                <input type="radio" value="female" name="gender" id="female">
+                <label for="female">여자</label>
+            </td>
+
+        </tr>
+        <tr>
+            <th>취미</th>
+            <!-- 여러개를 복수로 선택할 수 있는 체크박스를 사용합니다 -->
+            <td>
+                <input type="checkbox" name="hobby" value="축구" id="football">
+                <label for="football">축구</label>
+                <input type="checkbox" name="hobby" value="농구" id="basketball">
+                <label for="basketball">농구</label>
+                <input type="checkbox" name="hobby" value="스키" id="ski">
+                <label for="ski">스키</label>
+                <input type="checkbox" name="hobby" value="달리기" id="running">
+                <label for="running">달리기</label>
+            
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="가입하기">
+                <input type="reset" value="다시쓰기">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

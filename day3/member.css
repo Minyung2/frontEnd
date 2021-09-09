@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&display=swap');
+*{
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+}
+table{
+    border-spacing: 10px;
+}
+td,th{
+    padding: 10px;
+   
+}
+th{
+    width: 20%;
+    background-color: rgba(89, 84, 170, 0.733);
+}
+/* 속성을 이용한 선택자 */
+input, select {
+    padding:4px;
+    border-radius: 4px;
+}
+input[type=submit], input[type=reset]{
+    cursor: pointer;
+    border: none;
+    
+}
+input[type=text],input[type=password],input[type=email]{
+    width: 70%;
+    
+}

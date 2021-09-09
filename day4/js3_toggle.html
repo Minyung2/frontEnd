@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 예제#3</title>
+</head>
+<body>
+    <p>HTML 태그의 속성값 변경하기 : img 태그의 이미지 파일명을 지정하는 src 속성값을 변경하는 예제</p>
+    <p> 전구를 클릭해 보세요. 현재 상태 : <em id="bulbstate"> OFF </em></p>
+    <h2>Bulb</h2>
+    <button onclick="bulbOn()">Turn on the light</button>
+    <img id="bulb" src="../images/pic_bulboff.gif" alt="light" style="width:100px; cursor: pointer;"
+                                            onclick="bulbToggle()">
+    <button onclick="bulbOff()">Turn off the light</button>
+    <script>
+        const img = document.getElementById('bulb');
+        const state = document.getElementById('bulbstate');
+        let bulbstate;
+        function bulbOn(){
+            img.src="../images/pic_bulbon.gif";
+            state.innerHTML='ON';
+            bulbstate='on';
+        }
+        function bulbOff(){
+            img.src="../images/pic_bulboff.gif";
+            state.innerHTML='OFF';
+            bulbstate = 'off';
+        }   
+        function bulbToggle() {
+            if(bulbstate=='on'){
+                bulbOff();
+            }
+            else{
+                bulbOn();
+            }
+        }
+    </script>
+
+</body>
+</html>
