@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+                <td>문자열 길이</td>
+                <td id="len">  </td>
+        </tr>
+        <tr>
+            <td>단어 am  마지막 위치 찾기 </td>
+             <td id="last">  </td>
+        </tr>
+        <tr>
+                <td>문자열 추출 7,11</td><td id="subs"></td>
+        </tr>
+        <tr>
+                <td>문자열 추출 11~ </td><td id="subs2"></td>
+        </tr>
+    </table>
+    <button onclick="strMethod()">클릭시 문자열 입력</button>
+    <!-- 요구사항 : 버튼을 클릭하면 사용자로부터 문자열을 입력받습니다. (prompt 다이얼로그)
+            입력받은 문자열로 String method 실행해서 table td 태그 안에 결과값 보여주기
+    -->
+    
+    
+    <script>
+        const strlen = document.getElementById('len');
+        const strlast = document.getElementById('last');
+        const strsubs = document.getElementById('subs');
+        const strsubs2 = document.getElementById('subs2');
+    function strMethod(){
+        let text = prompt('입력할 문자열');
+        strlen.innerHTML = text.length;
+        strlast.innerHTML = text.lastIndexOf('am');
+        strsubs.innerHTML = text.slice(7,11);
+        strsubs2.innerHTML = text.slice(11);
+    }        
+
+    
+    </script>
+    <br>
+    <br>
+    <script src="ex5.js">
+            
+
+    </script>
+</body>
+</html>

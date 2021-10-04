@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이터러블 iterable 객체 : 여러개의 데이터를 저장하는 자료구조 ex) 배열 
+                            for 문을 이용해서 데이터를 순서대로 값을 접근(순회)
+                            foreach() 메소드는 for문을 대신합니다. 인자로 함수를 전달.
+        *if, for, while 문을 지양하는 프로그래밍 언어
+                        -->
+    <p id = "demo"></p>
+    <p id = "demo_each"></p>
+    <p id = "filter"></p>
+    <p id = "over10"></p>
+    <script>
+        const list = ['sana', 'mina', 'nana', 'nayeon'];
+
+        for(let i = 0 ; i < list.length ; i++){
+            console.log(list[i]);
+        }
+
+        let result = '<ul>';
+        list.forEach(function(value,index,array){   // 콜백 함수 인자는 forEach 메소드에서 list가 배열이므로 자동으로 value, index, array 를 순서대로 받습니다. (변수명 변경 가능)
+            // result += "<li>" + value + "</li>";     // value 변수 대신 index로 바꿔서 해보기
+            // result += "<li>" + index + "</li>";  // 0,1,2,3 으로 출력
+            result += `<li>${index+1} : ${value}</li>`;
+        });
+        result += '</ul>';
+        document.getElementById('demo_each').innerHTML=result;
+        // 결론 : 배열 객체는 유용한 메소드가 많고 상당수 콜백 함수를 인자로 사용함.
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];  // 배열
+        let fLen = fruits.length;   // 배열 요소의 개수
+
+        text = "<ui>";
+        for (let i = 0; i < fLen ; i++){
+            text += "<li>" + fruits[i] + "</li>";
+        };
+        text+= "</ul>"
+        document.getElementById('demo').innerHTML=text;
+
+        const numbers = [45, 4, 9, 16, 25];
+        const over18 = numbers.filter(myFunction);  // 콜백함수 myfunction 식별자
+        document.getElementById("filter").innerHTML = over18;
+        function myFunction(value) {
+        return value > 18;  
+        }
+        // 문제 : over 10 배열을 arrow 함수로 작성
+
+        
+        /* const myFilter = (value) => value >10;
+        const over10 = numbers.filter(myFilter); */
+        const over10 = numbers.filter((value) => value >10);
+        document.getElementById("over10").innerHTML = over10;
+        
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- string method : 메소드 실랭한 후에 원본 문자열을 변경 ? or 새로운 문자열을 생성? -->
+    <script>
+    /* 변수 선언 var 쓰지 말자 변수의 값이 실행 중에 재할당 된다- let, 재할당 없다. 또는 객체 const  */
+    console.log("1.복습---------------");
+    let str = "Apple, Banana, Kiwi"
+    const result = str.toUpperCase();
+    console.log(str);
+    console.log(result);
+    str = "Mango";
+    result = "Mango"; // result 는 const 로 선언되어 재할당 할수 없다. -> 오류
+    </script>
+     <!-- string method
+    substring, slice, substr 비교 : slice 메소드는 마이너스 값을 갖는다. -1은 문자열 가장 마지막 인덱스 
+    -->
+    <script>
+        console.log("2. slice 메소드--------------");
+        let str2= "Apple, Banana, Kiwi";
+        console.log(str2.slice(-4));        // Kiwi : -4(K) ~ 끝까지 
+        console.log(str2.slice(-12,-6));    // Banana : -12(B) ~ -6(a) 까지
+        console.log(str2.substr(-12,3));     // Ban : -12(B)부터 3개 출력, slice와 다른점? 두번째 인자가 length
+
+    </script>
+    <!-- 정규식 : 문자열에서 특정 조합을 검사하기 위해 패턴 (예를 들면, 문자열@ 문자열.com -> 기호를 사용한 패턴) 
+    정규식은/ / 안에 작성. g (대소문자 구분), i(대소문자 구분 안함) 사용한 replace-->
+    <script>
+        console.log("3. 정규식으로 검색 문자열 표현-------------------")
+        let text = "Please visit Microsoft and Microsoft!"      //  /Microsoft/g -> Microsoft 찾기 g 패턴 적용
+        let newText = text.replace(/Microsoft/g,"W3Schools");
+        console.log(newText);
+        console.log(text.replace(/Microsoft/g,"W3Schools"));
+        newText = "Please visit Microsoft!";                    // i 는 처음 일치하는 것 하나만 찾아 변경.
+        console.log(text.replace(/Microsoft/i,"Korea!"));
+    </script>
+    <!-- 그 외의 자바와 같은 문자열 메소드 : trim, concat, charAt, indexOf, lastIndexOf, startsWith, endsWith 등 -->
+</body>
+</html>

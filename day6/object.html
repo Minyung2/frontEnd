@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 자바 스크립트의 객체 : 객체 리터럴 { } 사용해서 선언. (new 연산과 함수를 이용해 사용도 가능) -->
+    <script>
+        const counter = {           // 객체 리터럴 선언 (일반적인 객체 : 필드(프로퍼티) 와 메소드)
+            num:0,                  // 프로퍼티 key : num, increase / 프로퍼티 value : num - 0, increase - 함수
+            increase : function(){  // 프로퍼티 값이 함수일ㄹ 때 메소드라고 합니다.
+                this.num++;
+            }                       //프로퍼티 이름을 key 라고 부르고 식별자(이름 규칙 동일)
+        };                          //counter 식별자는 객체(인스턴스) 를 참조 (자바처럼 클래스를 정의하지 않고 객체 생성)
+
+        /* 참고 : 자바처럼 new 연산으로 객체 생성하기 위해 클래스 대신에 함수를 사용함. */
+       console.log("1.counter 객체 확인 ----------------");
+       console.log(counter);
+       console.log(counter.num);
+       counter.mode = "static"; // counter 객체에 mode 프로퍼티값을 'static'으로 해라 // 없는 프로퍼티 동적 생성
+       console.log(counter);
+       counter.increase();
+       console.log(counter);
+       counter.increase();
+       console.log(counter);
+       console.log(counter["mode"]);    //counter.mode 와 동일. ** 프로퍼티 이름은 "안에 씁니다.
+
+       console.log("2. person 객체 생성해봅니다 --------------------")
+       /* 이름 : 'sana' 나이 : 27, say 메소드 동작 : alert 로 자기소개 (나는 사나입니다.) */
+
+       const person = {
+           name : "sana",
+            age : 26,
+            say : function() {
+                alert("나는 " + this.name + "입니다.")
+            }
+       };
+
+       console.log(person);
+       person["name"] = 'Nayeon';
+       person.say();
+    /* 참고 : 자바 스크립트 객체 JSON 이라고 불리면서 비동기 통신에 데이터 전송 방식으로 사용되고 있음 */
+
+    const prefix = 'prop';
+       let i =0;
+    const obj = {
+        [`${prefix}-${++i}`]:i,
+        [`${prefix}-${++i}`]:i,
+        [`${prefix}-${++i}`]:i,
+    };
+    console.log(obj);
+
+    </script>
+</body>
+</html>

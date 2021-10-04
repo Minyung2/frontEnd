@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .init{
+            font-size : 1rem;   /* em, rem : 배율로 크기를 조정. 차이점 : em 은 부모 태그 기준, rem 은 root 태그 기준(html, body는 글꼴 크기 ) */
+            color : black;
+        }
+        .small_blue1{
+            font-size:0.7rem;
+            color:blue;
+        }
+        .small_blue2{
+            font-size:0.5rem;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>오늘의 과일</h3>
+    <ul>
+        <li id="apple">사과</li>
+        <li id="banana">바나나</li>
+        <li id="orange">오렌지</li>
+    </ul>
+    <ul id="fruit">
+        <li><span id="#f1">레몬</span></li>
+        <li><span id="#f2">레몬</span></li>
+    </ul>
+    <button onclick= "red()">글꼴 색깔 변경</button>
+    <button onclick= "larger()">글씨 크기 120%로 변경</button><br>
+    <button onclick= "init()">스타일 초기화</button>
+    <button onclick= "small_blue1()">글꼴 small&blue로 변경</button>
+    <button onclick= "small_blue2()">더 작게</button>
+    <script>
+        const $banana = document.getElementById('banana');      // 요소 1개만 찾아옵니다
+        $banana.innerHTML="Banana";
+
+        // 요소 여러개를 찾아오는 메소드
+        const $list = document.getElementsByTagName("li");      // 요소 4개 있습니다. -> HTML 컬렌션 객체타입을 생성
+        console.log($list);
+        //  배열로 변환 : [...] 기호 스프레드 연산자
+        [...$list].forEach(function(item){   //$list를 배열로 변환 후 foreach : $list를 구성하는 배열 요소가 li 요소
+            item.style.color="green";
+        });
+
+        function red(){
+            [...$list].forEach((fruit) => fruit.style.color="red"); // 컬렉션 객체를 배열로 변환 $list.array. 콜백 함수 매개 변수는 순서의 의미가 있고 변수명은 임의로 작성
+        };    
+        
+        function larger(){
+            Array.from($list).forEach(function(item){   // [...] 와 같이 Array.from(컬렉션) 으로 배열화 가능.
+                item.style.fontSize="1.2em";
+            }
+        )};
+            /* DOM 메소드 : (1)document.getElementById, (2)document.getElementsByTagName, (3)document.getElementsByClassName 
+                        HTML Collection 타입으로 리턴하는 것은 (2), (3)번
+                        (4) document.querySelector 메소드 : 인자를 css 선택자 - #banana, fruit, li>span */
+        
+        // function init(){
+        //     const init = document.getElementsByClassName("init");
+        //     Array.from($list).forEach(function(item){
+        //        init(item.style);
+        //     }
+        // )};
+
+        function small_blue1() {
+                const $lemon = document.querySelector('li > #f1');       //css 선택자로 요소를 가져옵니다.
+                $lemon.className="small_blue1";
+                console.log($lemon);
+            }
+            function small_blue2() {
+                const $lemon = document.querySelector('li > #f2');       //css 선택자로 요소를 가져옵니다.
+                $lemon.className="small_blue2";
+            }
+    </script>
+</body>
+</html>

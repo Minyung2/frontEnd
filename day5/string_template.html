@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="test"></p>
+    <!-- 자바스크립트의 템플릿 문자열 : 기호는 '' 사용. (1) multi line (2) 표현식 ${}를 사용하요 변수값 포함 -->
+    <ul id ="result">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+    <script>
+        console.log("4. 템플릿 문자열 테스트-------------------")
+        const str=`i
+        like
+        java script`;   // multiline 문자열
+        // document.write(str); // 적용이 안됨
+        document.getElementById("test").innerHTML=str;
+        console.log(str);
+        console.log(`i
+        am
+        Java`);
+        const fruit = 'Lemon';  // 변수
+        const result =  `<li>Apple</li>
+        <li>${fruit}</li>
+        <li>Mango</li>`;
+        const $result = "<li>Apple</li><li>${fruit}</li><li>Mango</li>";
+        // document.getElementById('result').innerHTML=result;
+        document.getElementById('result').innerHTML=$result;        // 태그 요소 렌더링은 가능, 표현식 값 출력은 불가능.
+    </script>
+</body>
+</html>
